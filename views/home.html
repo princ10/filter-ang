@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            .form-control{
+                margin-bottom: 5px;
+                background: #eee;
+                padding: 15px 100px;
+                width: 100%;
+                text-align:center;
+            }
+        </style>
+</head>
+<body>
+   
+    <div ng-controller="appCtr">
+      
+        <table class="table table-bordered">
+            <tr>
+                <th>name</th>
+                <th>age</th>
+                <th>compeny</th>
+                <th>designation</th>
+                <th>Delete</th>
+              
+            </tr>
+            
+            <tr ng-repeat="user in User">
+
+                <td>{{user.name}}</td>
+                <td>{{user.age}}</td>
+                <td>{{user.compeny}}</td>
+                <td>{{user.designation}}</td>
+                <td><a class="btn" ng-click="remove($index)">Delete</a></td>
+                 
+            </tr>
+        </table>
+
+        <form action="" method="get" class="form-group "  ng-submit="addUsers()">
+            <input class="form-control" type="text" placeholder="Add name" ng-model="newName.name"><br/>
+
+            <input class="form-control" type="text" placeholder="Add age" ng-model="newAge.age"><br/>
+
+            <input class="form-control" type="text" placeholder="Add compeny" ng-model="newCompeny.compeny"><br/>
+
+            <input class="form-control" type="text" placeholder="Add designation" ng-model="newDesignation.designation"><br/>
+            
+            <input type="submit" value="Add Users" class="btn btn-success">
+        
+        </form>
+    </div>
+
+
+
+</body>
+</html>
